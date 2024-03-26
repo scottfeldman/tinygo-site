@@ -7,8 +7,6 @@ description: >
 
 This page details how to build TinyGo from source. If you would like to install a pre-built binary release, please see our [quick install guide](../../../getting-started/install).
 
-You'll need [Go](https://go.dev) installed on your machine to build TinyGo. The Go team provides install documentation [here](https://go.dev/doc/install).
-
 A major dependency of TinyGo is [LLVM](https://llvm.org/). You can either use a version of LLVM already on your system or build LLVM manually. Building manually takes a long time (around an hour depending on how fast your system is) so it is recommended to use a version of LLVM already on your system if that's possible. The links provided below show how to install LLVM one way or the other.
 
 After finishing building TinyGo from source remember to refer to the [additional requirements](./additional-requirements.md) page to ensure you have a fully working TinyGo installation.
@@ -56,8 +54,27 @@ You should also check if there's a remaining `tinygo` executable in your path an
 **Windows** users may run `where tinygo` to see the where any remaining TinyGo executable is located at.
 
 
+## Build Dependecies
+
+You'll need [Go](https://go.dev) installed on your machine to build TinyGo. The Go team provides install documentation [here](https://go.dev/doc/install).
+
+You'll also need C and C++ compilers installed on your machine to build TinyGo.
+
+**Ubuntu and Debian**
+
+```shell
+sudo apt-get update
+sudo apt-get install build-essential
+```
+
+**Fedora**
+
+```shell
+sudo dnf install make automake gcc gcc-c++
+```
+
 ## Repository cloning (before build)
-Start with getting the source code. On Windows, you might want to install the [build dependencies](#build-dependencies) first.
+Start with getting the source code.
 
 ```shell
 git clone https://github.com/tinygo-org/tinygo.git
